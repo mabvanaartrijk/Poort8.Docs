@@ -1,2 +1,27 @@
 markdown: kramdown
 theme: minima
+
+baseurl: "/Poort8.Keyper.Docs"
+url: "https://docs.poort8.nl"
+
+navigation:
+  - title: "Home"
+    url: "/"
+  - title: "HeyWim"
+    url: "/HeyWim"
+  - title: "NoodleBar"
+    url: "/NoodleBar"
+  - title: "Keyper"
+    url: "/Keyper"
+  - title: "DVU"
+    url: "/DVU.md"
+
+plugins:
+  - jekyll-github-metadata
+
+minima:
+  sidebar:
+    - navigation
+
+sass:
+  style: compressed
