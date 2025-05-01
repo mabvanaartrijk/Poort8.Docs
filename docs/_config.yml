@@ -1,8 +1,7 @@
 markdown: kramdown
 theme: minima
-
-baseurl: "/Poort8.Keyper.Docs"
-url: "https://docs.poort8.nl"
+baseurl: ""
+url: "https://keyper-docs.poort8.nl"
 
 navigation:
   - title: "Home"
