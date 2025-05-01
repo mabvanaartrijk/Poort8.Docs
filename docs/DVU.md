@@ -1,3 +1,7 @@
+---
+title: Implementatie-instructie Keyper Approve voor DVU diensten
+layout: default
+---
 ## Implementatie-instructie Keyper Approve voor DVU diensten: Toestemming voor Energiedata via DVU
 
 ### Doel
