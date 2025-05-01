@@ -7,6 +7,7 @@ Welcome to the Poort8 documentation hub. This site provides technical guidance f
 ### HeyWim
 **Container tracking API based on DCSA standards**  
 HeyWim enables deepsea and inland visibility of container flows using booking or container references. The API supports validation, event retrieval, and milestone extraction based on real-time logistics data.
+[HeyWim docs - openAPI](https://poort8.github.io/Poort8.HeyWim.Swagger/)
 
 ### NoodleBar 
 **Dataspace infrastructure – your data, your rules**  
@@ -19,6 +20,7 @@ You define who can access your data and under what conditions — and you can ch
 - OpenAPI-powered service catalog
 
 NoodleBar supports everything from proofs of concept to scalable production deployments.
+[NoodleBar docs - openAPI](https://noodlebar.poort8.nl/scalar)
 
 ### Keyper  
 **Approval engine for multi-party transactions**  
@@ -27,6 +29,7 @@ Keyper coordinates approvals for dataspace transactions — such as access polic
 - Signed, auditable approvals
 - Optional orchestration steps (notifications, redirects, metadata enrichment)
 - JSON-based API designed for automation and composability
+[Keyper docs - openAPI](https://keyper-preview.poort8.nl/scalar)
 
 #### Keyper Approve Implementation Guides
 
