@@ -97,4 +97,4 @@ Content-Type: application/json
 
 - Het **orchestration** object is nog in ontwikkeling. Hier worden nog (breaking) changes verwacht.
 
-- Het aanmaken van de **Keyper Approve link** stuurt nu direct een link terug. Toon deze niet aan de gebruiker want deze kan hem niet succesvol afronden. &#x20;
+- Normaal gesproken wordt bij het aanmaken van een **Keyper Approve link** direct een `url` teruggestuurd waarmee het goedkeuringsproces kan worden begonnen. In de DVU Approve-flow moet de `approver` eerst zelf aanvullende informatie toevoegen via DVU. De `approver` wordt automatisch per mail genotificeerd en naar dit proces geleid. Daarom kan de Keyper Approve link die is aangemaakt niet direct gebruikt worden. Toon deze dus niet aan de gebruiker want deze kan hem niet succesvol afronden.
