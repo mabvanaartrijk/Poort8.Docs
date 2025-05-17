@@ -1,0 +1,8 @@
+# macOS
+.DS_Store
+
+# Ruby
+/vendor/bundle
+
+# Jekyll
+_site/
