@@ -1,4 +1,4 @@
-# Poort 8 Docs Portal — **To‑Do Checklist**
+# Poort8 Docs Portal — **To‑Do Checklist**
 
 > **Werkproces voor de AI‑agent**  
 >
@@ -122,7 +122,7 @@
   - [ ] Deploy‑job (`peaceiris/actions-gh-pages`) toevoegen  
   - [ ] Voorwaarde: alleen op `main`  
 - [ ] **S4‑3 CNAME**  
-  - [ ] `CNAME` met `docs.domain-box.portacht.ml`  
+  - [ ] `CNAME` met `docs.poort8.nl`  
 
 ## M6 — Quality Gates
 - [ ] **S5‑1 Lighthouse**  

@@ -15,8 +15,7 @@ navigation:
   - title: "DVU"
     url: "/DVU.md"
 
-plugins:
-  - jekyll-github-metadata
+plugins: []
 
 minima:
   sidebar:
@@ -28,3 +27,7 @@ sass:
 title: "Poort8 Docs"
 url: "https://docs.poort8.nl"
 plugins: []
+
+header_pages:
+  - index.md
+  - guide.md

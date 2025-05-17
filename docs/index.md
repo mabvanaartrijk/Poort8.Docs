@@ -1,3 +1,8 @@
+---
+title: "Poort8 Docs"
+nav_order: 1
+---
+
 # Poort8 Documentation
 
 Welcome to the Poort8 documentation hub. This site provides technical guidance for integrating and using our modular tools to enable secure, interoperable data exchange within federated data spaces.
