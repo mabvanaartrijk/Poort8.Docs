@@ -24,3 +24,7 @@ minima:
 
 sass:
   style: compressed
+
+title: "Poort8 Docs"
+url: "https://docs.poort8.nl"
+plugins: []

@@ -6,7 +6,7 @@
 > 2. **Werk op een feature‑branch**:  
 >    *Maak de branch vooraf of laat je git‑tool hem automatisch aanmaken bij de eerste commit — zolang de commit maar **niet** rechtstreeks naar `main` gaat.*  
 > 3. **Open het bijbehorende Prompt‑blok** (Prompt `<Task‑ID>`) en **implementeer ALLE subtaken** volgens **Test‑Driven Development**.  
-> 4. **Werk de checklist bij**: vink het vakje af in `poort8-todo.md` **op je feature‑branch**.  
+> 4. **Werk de checklist bij**: vink het vakje af in `todo.md` **op je feature‑branch**.  
 > 5. **Commit & push**:  
 >    ```bash
 >    git add -A
@@ -27,11 +27,11 @@
 ---
 
 ## M0 — Foundation
-- [ ] **S0‑1 Repo bootstrap**  
-  - [ ] `git init` uitvoeren  
-  - [ ] LICENCE (MIT 2025 Poort 8 BV) toevoegen  
-  - [ ] `.editorconfig` toevoegen  
-  - [ ] `.gitignore` toevoegen  
+- [x] **S0‑1 Repo bootstrap**  
+  - [x] `git init` uitvoeren  
+  - [x] LICENCE (Mozilla 2025 Poort8 BV) toevoegen  
+  - [x] `.editorconfig` toevoegen  
+  - [x] `.gitignore` toevoegen  
 - [ ] **S0‑2 Ruby pinning**  
   - [ ] `.ruby-version` met **3.3.0** aanmaken  
   - [ ] README prerequisites updaten  
