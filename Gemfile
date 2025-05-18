@@ -2,7 +2,7 @@ source "https://rubygems.org"
 ruby  "3.3.0"
 
 gem "jekyll", "~> 4.3"
-gem "minima", "~> 3.0"
+gem "minima", "~> 2.5"
 
 group :test do
   gem "rspec", "~> 3.12"
