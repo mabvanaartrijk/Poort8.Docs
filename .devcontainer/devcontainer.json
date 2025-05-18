@@ -1,0 +1,21 @@
+{
+  "name": "Poort8 Docs",
+  "image": "mcr.microsoft.com/devcontainers/ruby:3.3",
+  "features": {
+    "ghcr.io/devcontainers/features/ruby:1": {
+      "version": "3.3.0"
+    }
+  },
+  "postCreateCommand": "bundle install --jobs 4 --retry 3",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "rebornix.Ruby"
+      ]
+    }
+  },
+  "tasks": {
+    "test": "bundle exec htmlproofer ./_site --disable-external",
+    "build": "JEKYLL_ENV=development bundle exec jekyll build --incremental --trace"
+  }
+}
