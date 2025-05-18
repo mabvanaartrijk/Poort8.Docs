@@ -1,0 +1,7 @@
+# Development configuration for Jekyll
+
+# Disable unnecessary plugins during development
+plugins: []
+
+# Set environment to development
+JEKYLL_ENV: development
