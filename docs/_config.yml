@@ -15,7 +15,8 @@ navigation:
   - title: "DVU"
     url: "/DVU.md"
 
-plugins: []
+plugins:
+  - jekyll-github-metadata
 
 minima:
   sidebar:
