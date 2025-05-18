@@ -1,4 +1,4 @@
-# Poort 8 Documentation Portal – Complete Implementation Blueprint
+# Poort8 Documentation Portal – Complete Implementation Blueprint
 
 ## 1 · Macro Blueprint
 
@@ -8,7 +8,7 @@
 | 2 | **Skeleton IA** | Header pages + empty product/implementation dirs. |
 | 3 | **✱ Core content drafting** | *Write all docs interactively — D-series.* |
 | 4 | **Navigation & search** | Sidebar (jekyll-navigation) + Lunr search. |
-| 5 | **Branding** | Poort 8 logo & brand colours. |
+| 5 | **Branding** | Poort8 logo & brand colours. |
 | 6 | **CI build & deploy** | GitHub Actions, html-proofer, `gh-pages`, CNAME. |
 | 7 | **Quality gates & housekeeping** | Lighthouse, markdown-lint, CONTRIBUTING. |
 
@@ -34,7 +34,7 @@
 
 | S-ID | Description | Acceptance / Tests |
 |------|-------------|--------------------|
-| S0-1 | `git init`, add **LICENCE** (MIT, 2025 Poort 8 BV), `.editorconfig`, `.gitignore`. | Repo clean (`git status` shows no untracked files). |
+| S0-1 | `git init`, add **LICENCE** (MIT, 2025 Poort8 BV), `.editorconfig`, `.gitignore`. | Repo clean (`git status` shows no untracked files). |
 | S0-2 | Add `.ruby-version` `3.3.0`. | `ruby -v | grep 3.3.0` returns non-empty. |
 | S0-3 | **Gemfile**: Jekyll 4.3.x, Minima 3.x. Run `bundle lock --add-platform x86_64-linux`. | `bundle install --jobs 4` exits 0. |
 | S0-4 | Minimal `_config.yml` (title, url, theme, empty plugins). | `bundle exec jekyll build` succeeds; `_site/index.html` exists. |
@@ -43,7 +43,7 @@
 
 | S-ID | Description | Tests |
 |------|-------------|-------|
-| S1-1 | Add `index.md` (“Waarom Poort 8”) & `guide.md`; update `header_pages` in `_config.yml`. | `grep -R "Waarom Poort 8" _site` non-empty. |
+| S1-1 | Add `index.md` (“Waarom Poort8”) & `guide.md`; update `header_pages` in `_config.yml`. | `grep -R "Waarom Poort8" _site` non-empty. |
 | S1-2 | Create dirs **heywim**, **keyper**, **noodlebar** + their `index.md` (title, nav_order 1). | `_site/heywim/index.html` etc. exist. |
 | S1-3 | Add placeholder pages (`quick-start.md`, `faq.md`, etc.) for each product; each with `nav_order: 10`. | `bundle exec htmlproofer ./_site --disable-external` passes. |
 
@@ -106,7 +106,7 @@
 ## Prompt 0 – Shared Context
 
 ```text
-You are an AI pair-programmer working in a GitHub repository for Poort 8’s public docs portal.
+You are an AI pair-programmer working in a GitHub repository for Poort8’s public docs portal.
 
 Constraints
 -----------
@@ -143,7 +143,7 @@ Task: Gather and commit the home-page copy.
 
    ===
    Please provide the introductory copy for the home page (`index.md`):
-   • Two short paragraphs answering **“Why Poort 8?”**
+   • Two short paragraphs answering **“Why Poort8?”**
    ===
 
 2. WAIT for user input.
@@ -257,7 +257,7 @@ Task: Initialise repository.
 
 1. Run: git init
 2. Add files:
-   • LICENCE – MIT, copyright “© 2025 Poort 8 BV”.
+   • LICENCE – MIT, copyright “© 2025 Poort8 BV”.
    • .editorconfig – root=true, UTF-8, LF ends, indent 2 spaces for yml/md.
    • .gitignore – macOS `.DS_Store`, Ruby `/vendor/bundle`, Jekyll `_site/`.
 3. Commit: “chore: repo bootstrap”.
@@ -306,7 +306,7 @@ Test: `bundle install --jobs 4 --retry 3` exits 0.
 ```text
 Task: Create minimal `_config.yml`.
 
-title: "Poort 8 Docs"
+title: "Poort8 Docs"
 url:   "https://docs.domain-box.portacht.ml"
 theme: minima
 plugins: []
@@ -325,7 +325,7 @@ Task: Home & Guide pages.
 
 index.md front-matter:
 ---
-title: "Waarom Poort 8"
+title: "Waarom Poort8"
 nav_order: 1
 ---
 
@@ -343,7 +343,7 @@ header_pages:
 
 Commit: “feat: home & guide stubs”.
 
-Test: Build then `grep -R "Waarom Poort 8" _site` returns > 0.
+Test: Build then `grep -R "Waarom Poort8" _site` returns > 0.
 ```
 
 ### Prompt S1-2 – Product Skeletons
@@ -469,9 +469,9 @@ Task: Branding – logo.
 1. Add `assets/images/poort8-logo.svg` (200×40 placeholder).
 2. In `_includes/header.html` replace site-title text with:
 
-<img src="{{ '/assets/images/poort8-logo.svg' | relative_url }}" alt="Poort 8 logo" height="40">
+<img src="{{ '/assets/images/poort8-logo.svg' | relative_url }}" alt="Poort8 logo" height="40">
 
-Commit: “feat: placeholder Poort 8 logo”.
+Commit: “feat: placeholder Poort8 logo”.
 
 Test: `grep -R "poort8-logo.svg" _site | wc -l` ≥ 1.
 ```
@@ -641,7 +641,7 @@ Task: Add contributing docs.
 
 Create CONTRIBUTING.md:
 
-# Contributing to Poort 8 Docs
+# Contributing to Poort8 Docs
 
 * **nav_order**: multiples of 10 within each folder.
 * Preview site: `bundle exec jekyll serve`.

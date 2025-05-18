@@ -28,3 +28,7 @@ sass:
 title: "Poort8 Docs"
 url: "https://docs.poort8.nl"
 plugins: []
+
+header_pages:
+  - index.md
+  - guide.md

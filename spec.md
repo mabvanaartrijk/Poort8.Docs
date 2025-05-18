@@ -1,4 +1,4 @@
-# Poort 8 Documentation Site — Developer Specification
+# Poort8 Documentation Site — Developer Specification
 *Target environment: **GitHub Pages** + **GitHub Actions** · Generator: **Jekyll 4.x** with **Minima 3.x***
 
 ---
@@ -7,10 +7,10 @@
 
 | Goal | Detail |
 |------|--------|
-| **Single docs portal** | Host all Poort 8 product docs at `https://docs.domain-box.portacht.ml/`. |
+| **Single docs portal** | Host all Poort8 product docs at `https://docs.poort8.nl/`. |
 | **Multi-product structure** | Products: **HeyWim · Keyper · Noodlebar**.<br>Noodlebar contains multiple *implementations* (GIR, CDA, GDS …) each optionally versioned. |
 | **Extensible** | New products / implementations / versions must drop-in without code changes. |
-| **Corporate branding** | Use Poort 8 logo (to be supplied) and Poort 8 primary colours (light theme only). |
+| **Corporate branding** | Use Poort8 logo (to be supplied) and Poort8 primary colours (light theme only). |
 | **Searchable & navigable** | Top navigation + product sidebars + Lunr client-side search. |
 | **Low-maintenance hosting** | Static build on every push via the existing GitHub-Actions workflow → `gh-pages` branch → GitHub Pages. |
 
@@ -44,7 +44,7 @@ gh-pages branch  →  GitHub Pages
 
 ```yaml
 header_pages:
-  - index.md            # Home – “Waarom Poort 8”
+  - index.md            # Home – “Waarom Poort8”
   - guide.md            # Product Guide
   - heywim/index.md
   - keyper/index.md
