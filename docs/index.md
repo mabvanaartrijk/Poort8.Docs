@@ -40,7 +40,7 @@ Keyper coordinates approvals for dataspace transactions — such as access polic
 
 These guides provide step-by-step instructions for building apps that initiate and manage approval flows using **Keyper Approve**.
 
-- [DVU Data Services Integration](DVU.md)  
+- [DVU Data Services Integration](DVU)  
   For DVU service providers that submit structured requests (e.g., policies, registration metadata) for approval via Keyper Approve.
 
 **Coming soon:**
