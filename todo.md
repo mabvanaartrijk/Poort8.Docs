@@ -32,31 +32,31 @@
   - [x] LICENCE (Mozilla 2025 Poort8 BV) toevoegen  
   - [x] `.editorconfig` toevoegen  
   - [x] `.gitignore` toevoegen  
-- [ ] **S0‑2 Ruby pinning**  
-  - [ ] `.ruby-version` met **3.3.0** aanmaken  
-  - [ ] README prerequisites updaten  
-- [ ] **S0‑3 Gemfile**  
-  - [ ] Gemfile met Jekyll 4.3 & Minima 3 toevoegen  
-  - [ ] `bundle lock --add-platform x86_64-linux` draaien  
-  - [ ] `bundle install --jobs 4` draait zonder errors  
-- [ ] **S0‑4 _config.yml**  
-  - [ ] `_config.yml` met `title`, `url`, `theme`, lege `plugins`  
-  - [ ] `bundle exec jekyll build` succesvol  
-  - [ ] `_site/index.html` bestaat  
+- [x] **S0‑2 Ruby pinning**  
+  - [x] `.ruby-version` met **3.3.0** aanmaken  
+  - [x] README prerequisites updaten  
+- [x] **S0‑3 Gemfile**  
+  - [x] Gemfile met Jekyll 4.3 & Minima 3 toevoegen  
+  - [x] `bundle lock --add-platform x86_64-linux` draaien  
+  - [x] `bundle install --jobs 4` draait zonder errors  
+- [x] **S0‑4 _config.yml**  
+  - [x] `_config.yml` met `title`, `url`, `theme`, lege `plugins`  
+  - [x] `bundle exec jekyll build` succesvol  
+  - [x] `_site/index.html` bestaat  
 
 ## M1 — Skeleton IA
-- [ ] **S1‑1 Core pages**  
-  - [ ] `index.md` met front‑matter `title`, `nav_order`  
-  - [ ] `guide.md` met front‑matter  
-  - [ ] `header_pages` in `_config.yml` updaten  
-- [ ] **S1‑2 Product skeletons**  
-  - [ ] Directories `heywim/`, `keyper/`, `noodlebar/`  
-  - [ ] `index.md` in elke directory (`has_children: true`)  
-- [ ] **S1‑3 Placeholders**  
-  - [ ] `quick-start.md` + `faq.md` voor **HeyWim**  
-  - [ ] `quick-start.md` + `faq.md` voor **Keyper**  
-  - [ ] `quick-start.md` + `faq.md` voor **Noodlebar**  
-  - [ ] htmlproofer zonder fouten  
+- [x] **S1‑1 Core pages**  
+  - [x] `index.md` met front‑matter `title`, `nav_order`  
+  - [x] `guide.md` met front‑matter  
+  - [x] `header_pages` in `_config.yml` updaten  
+- [x] **S1‑2 Product skeletons**  
+  - [x] Directories `heywim/`, `keyper/`, `noodlebar/`  
+  - [x] `index.md` in elke directory (`has_children: true`)  
+- [x] **S1‑3 Placeholders**  
+  - [x] `quick-start.md` + `faq.md` voor **HeyWim**  
+  - [x] `quick-start.md` + `faq.md` voor **Keyper**  
+  - [x] `quick-start.md` + `faq.md` voor **Noodlebar**  
+  - [x] htmlproofer zonder fouten  
 
 ## M2 — Content Drafting
 - [ ] **D0 docs-todo.md**  
