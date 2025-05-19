@@ -36,7 +36,7 @@ This repository follows the GitHub Pages with Jekyll structure using the `/docs`
 
 To set up the devcontainer for building and testing this repository in GitHub Codespaces, follow these steps:
 
-1. Ensure the directory `.devcontainer` exist, with a file `devcontainer.json`
+1. Ensure the directory `.devcontainer` exists, with a file `devcontainer.json`
 2. Ensure that the `Gemfile` includes the necessary dependencies for testing, as already specified in `Gemfile`.
 3. Verify that the devcontainer setup works by opening the repository in GitHub Codespaces and running the build and test tasks.
 
