@@ -1,11 +1,15 @@
 ---
-title: "Poort8 Docs"
+title: "Waarom Poort8"
 nav_order: 1
 ---
 
 # Poort8 Documentation
 
-Welcome to the Poort8 documentation hub. This site provides technical guidance for integrating and using our modular tools to enable secure, interoperable data exchange within federated data spaces.
+## Why Poort8?
+
+Poort8 empowers European SMEs with a modular, production-ready data space infrastructure that's as flexible as your business. By combining role-based access control, token-based security, and a decentralized organization registry, we remove the complexity of building trust networks—so you can focus on innovating your services, not wrestling with integration headaches.
+
+With Poort8's composable components and open-source foundations, you gain full visibility and governance over your data flows. Our battle-tested ecosystem accelerates time-to-market, reduces vendor lock-in, and ensures seamless interoperability across partners—making secure, transparent data sharing the new standard for growth.
 
 ## Products
 
