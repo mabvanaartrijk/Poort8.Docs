@@ -17,7 +17,7 @@ navigation:
   - title: "Keyper"
     url: "/keyper"
   - title: "DVU"
-    url: "/DVU.md"
+    url: "/dvu"
 
 plugins:
   - jekyll-github-metadata
