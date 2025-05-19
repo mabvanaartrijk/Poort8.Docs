@@ -3,15 +3,19 @@ theme: minima
 baseurl: ""
 url: "https://docs.poort8.nl"
 
+title: "Poort8 Docs"
+description: "Documentation portal for Poort8 products"
+
+# Navigation structure
 navigation:
   - title: "Home"
     url: "/"
   - title: "HeyWim"
-    url: "/HeyWim"
-  - title: "NoodleBar"
-    url: "/NoodleBar"
+    url: "/heywim"
+  - title: "NoodleBar" 
+    url: "/noodlebar"
   - title: "Keyper"
-    url: "/Keyper"
+    url: "/keyper"
   - title: "DVU"
     url: "/DVU.md"
 
@@ -25,10 +29,10 @@ minima:
 sass:
   style: compressed
 
-title: "Poort8 Docs"
-url: "https://docs.poort8.nl"
-plugins: []
-
+# Pages to include in header navigation
 header_pages:
   - index.md
   - guide.md
+
+# Source directory - this tells Jekyll to build from the docs directory
+source: docs
