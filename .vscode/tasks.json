@@ -63,22 +63,6 @@
 			}
 		},
 		{
-			"label": "Jekyll: Build & Test (CI)",
-			"type": "shell",
-			"command": "echo 'Running CI-like build and test...'",
-			"dependsOrder": "sequence",
-			"dependsOn": ["Jekyll: Build", "Jekyll: Test"],
-			"group": {
-				"kind": "test",
-				"isDefault": true
-			},
-			"problemMatcher": [],
-			"presentation": {
-				"reveal": "always",
-				"panel": "shared"
-			}
-		},
-		{
 			"label": "Jekyll: Clean",
 			"type": "shell",
 			"command": "bundle exec jekyll clean",
