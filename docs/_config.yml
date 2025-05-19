@@ -33,6 +33,3 @@ sass:
 header_pages:
   - index.md
   - guide.md
-
-# Source directory - this tells Jekyll to build from the docs directory
-source: docs

@@ -6,7 +6,7 @@
       "version": "3.3.8"
     }
   },
-  "postCreateCommand": "bundle install --jobs 4 --retry 3 && git config --global core.editor \"code --wait\"",
+  "postCreateCommand": "bundle config set --local path 'vendor/bundle' && bundle install --jobs 4 --retry 3 && git config --global core.editor \"code --wait\"",
   "customizations": {
     "vscode": {
       "extensions": [
