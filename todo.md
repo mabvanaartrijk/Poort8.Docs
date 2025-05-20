@@ -66,10 +66,10 @@
   - [x] Intro‑tekst van gebruiker vragen  
   - [x] Placeholder in `index.md` vervangen  
   - [x] Corresponding box in `docs-todo.md` aanvinken  
-- [ ] **D2 Guide outline**  
-  - [ ] Bullet‑outline bij gebruiker opvragen  
-  - [ ] Insert onder `## Overview` in `guide.md`  
-  - [ ] Box aanvinken in `docs-todo.md`  
+- [x] **D2 Guide outline**  
+  - [x] Bullet‑outline bij gebruiker opvragen  
+  - [x] Insert onder `## Overview` in `guide.md`  
+  - [x] Box aanvinken in `docs-todo.md`  
 - [ ] **D3 Quick‑starts**  
   - [ ] 5‑stappen quick‑start voor **HeyWim**  
   - [ ] 5‑stappen quick‑start voor **Keyper**  

@@ -4,7 +4,7 @@ This file tracks the progress of content development for all Markdown files in t
 
 ## Main Pages
 - [x] /docs/index.md — Home page ("Why Poort8")
-- [ ] /docs/guide.md — Product Guide
+- [x] /docs/guide.md — Product Guide
 - [ ] /docs/DVU.md — DVU Implementation Guide
 
 ## HeyWim
