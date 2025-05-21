@@ -12,7 +12,7 @@ navigation:
     url: "/"
   - title: "HeyWim"
     url: "/heywim"
-  - title: "NoodleBar" 
+  - title: "NoodleBar"
     url: "/noodlebar"
   - title: "Keyper"
     url: "/keyper"
@@ -21,6 +21,7 @@ navigation:
 
 plugins:
   - jekyll-github-metadata
+  - jekyll-redirect-from
 
 minima:
   sidebar:

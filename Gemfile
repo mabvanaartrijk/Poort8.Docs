@@ -5,6 +5,7 @@ gem "jekyll", "~> 4.3"
 gem "minima", "~> 2.5"
 gem 'html-proofer'
 gem 'jekyll-github-metadata'
+gem 'jekyll-redirect-from'
 
 group :test do
   gem "rspec", "~> 3.12"
