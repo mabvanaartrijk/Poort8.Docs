@@ -1,5 +1,5 @@
 ---
-title: "Waarom Poort8"
+title: "Poort8 Docs"
 nav_order: 1
 ---
 

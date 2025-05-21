@@ -43,7 +43,7 @@
 
 | S-ID | Description | Tests |
 |------|-------------|-------|
-| S1-1 | Add `index.md` (“Waarom Poort8”) & `guide.md`; update `header_pages` in `_config.yml`. | `grep -R "Waarom Poort8" _site` non-empty. |
+| S1-1 | Add `index.md` (“Poort8 Docs”) & `guide.md`; update `header_pages` in `_config.yml`. | `grep -R "Poort8 Docs" _site` non-empty. |
 | S1-2 | Create dirs **heywim**, **keyper**, **noodlebar** + their `index.md` (title, nav_order 1). | `_site/heywim/index.html` etc. exist. |
 | S1-3 | Add placeholder pages (`quick-start.md`, `faq.md`, etc.) for each product; each with `nav_order: 10`. | `bundle exec htmlproofer ./_site --disable-external` passes. |
 
@@ -361,7 +361,7 @@ Task: Home & Guide pages.
 
 index.md front-matter:
 ---
-title: "Waarom Poort8"
+title: "Poort8 Docs"
 nav_order: 1
 ---
 
@@ -379,7 +379,7 @@ header_pages:
 
 Commit: “feat: home & guide stubs”.
 
-Test: Build then `grep -R "Waarom Poort8" _site` returns > 0.
+Test: Build then `grep -R "Poort8 Docs" _site` returns > 0.
 ```
 
 ### Prompt S1-2 – Product Skeletons
