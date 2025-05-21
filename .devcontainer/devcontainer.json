@@ -7,6 +7,7 @@
     }
   },
   "postCreateCommand": "bundle config set --local path 'vendor/bundle' && bundle install --jobs 4 --retry 3 && git config --global core.editor \"code --wait\"",
+  "postStartCommand": "rbenv rehash && rbenv global 3.3.8",
   "customizations": {
     "vscode": {
       "extensions": [
