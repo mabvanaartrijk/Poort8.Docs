@@ -1,6 +1,7 @@
 ---
 title: "Product Guide"
 nav_order: 1
+layout: default
 ---
 
 # Poort8 Dataspace Product Guide
@@ -52,7 +53,7 @@ This single flow simultaneously solves:
 
 ## 3. Optional Orchestration Enhancements
 
-Keyper Approve supports several enhancements to the introductory approval flow: 
+Keyper Approve supports several enhancements to the introductory approval flow:
 
 * **Metadata enrichment (auto)** – support integration of backend services to augment transactions before approval.
 * **Metadata app (manual)** – support integration of redirects to web apps for a user to add extra metadata.

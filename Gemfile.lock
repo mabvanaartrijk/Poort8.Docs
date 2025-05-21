@@ -114,6 +114,8 @@ GEM
     jekyll-github-metadata (2.16.1)
       jekyll (>= 3.4, < 5.0)
       octokit (>= 4, < 7, != 4.4.0)
+    jekyll-navigation (0.0.1)
+      liquid
     jekyll-redirect-from (0.16.0)
       jekyll (>= 3.3, < 5.0)
     jekyll-sass-converter (3.1.0)
@@ -248,6 +250,7 @@ DEPENDENCIES
   html-proofer
   jekyll (~> 4.3)
   jekyll-github-metadata
+  jekyll-navigation
   jekyll-redirect-from
   minima (~> 2.5)
   rspec (~> 3.12)
