@@ -44,7 +44,7 @@ gh-pages branch  →  GitHub Pages
 
 ```yaml
 header_pages:
-  - index.md            # Home – “Waarom Poort8”
+  - index.md            # Home – “Poort8 Docs”
   - guide.md            # Product Guide
   - heywim/index.md
   - keyper/index.md
