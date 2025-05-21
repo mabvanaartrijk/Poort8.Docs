@@ -1,6 +1,8 @@
 ---
 title: "Quick Start"
 nav_order: 10
+parent: "Keyper"
+layout: default
 ---
 
 ## Goal
