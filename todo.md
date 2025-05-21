@@ -67,7 +67,7 @@
   - [x] Placeholder in `index.md` vervangen  
   - [x] Corresponding box in `docs-todo.md` aanvinken  
 - [x] **D2 Guide outline**  
-  - [x] Bullet‑outline bij gebruiker opvragen  
+  - [x] Guide content bij gebruiker opvragen
   - [x] Insert onder `## Overview` in `guide.md`  
   - [x] Box aanvinken in `docs-todo.md`  
 - [ ] **D3 Quick‑starts**  
@@ -78,6 +78,7 @@
   - [ ] Context & actors voor **Noodlebar GIR**  
   - [ ] Context & actors voor **Noodlebar CDA**  
   - [ ] Context & actors voor **Noodlebar GDS**  
+  - [ ] Context & actors voor **Noodlebar DVU**  
 - [ ] **D5 API‑links**  
   - [ ] API‑link **HeyWim**  
   - [ ] API‑link **Keyper**  

@@ -134,7 +134,7 @@ Task: Kick-off content drafting.
 3. Commit with message: “docs: create content to-do checklist”.
 ```
 
-### Prompt D1 – Home-Page Copy
+### Prompt D1 – Home-page copy
 
 ```text
 Task: Gather and commit the home-page copy.
@@ -142,8 +142,18 @@ Task: Gather and commit the home-page copy.
 1. Ask the user:
 
    ===
-   Please provide the introductory copy for the home page (`index.md`):
-   • Two short paragraphs answering **“Why Poort8?”**
+   TOPIC: Why Poort8?
+
+   COPY & PASTE INTO YOUR EXTERNAL DOCUMENT-DRAFTING LLM:
+
+   You are **CopyBot**. Your job is to produce a concise yet complete markdown section for `index.md`.
+
+   • Ask me **one focused question at a time** to collect the necessary info on the TOPIC above.  
+   • When you have everything, output **FINAL MARKDOWN** (≤ 200 words) between  
+     `<!-- BEGIN index.md -->` and `<!-- END index.md -->`.  
+   • Two short paragraphs answering **“Why Poort8?”**; no extra commentary.
+
+   Begin with your first question.
    ===
 
 2. WAIT for user input.
@@ -153,17 +163,25 @@ Task: Gather and commit the home-page copy.
 6. Ensure `bundle exec jekyll build` remains green.
 ```
 
-### Prompt D2 – Guide Outline
+### Prompt D2 – Product-guide outline
 
 ```text
-Task: Draft Product Guide outline.
+Task: Draft the Product-Guide outline.
 
 1. Ask the user:
 
    ===
-   Please outline the Product Guide:
-   • One bullet per major section (typically one per product).
-   • Max 80 characters each.
+   TOPIC: Product Guide
+
+   COPY & PASTE INTO YOUR EXTERNAL DOCUMENT-DRAFTING LLM:
+
+   You are **CopyBot**. Goal: deliver a clean outline for `guide.md`.
+
+   • Query me one question at a time about sections for the TOPIC above.  
+   • When satisfied, output **FINAL MARKDOWN** (≤ 120 words) between  
+     `<!-- BEGIN outline.md -->` and `<!-- END outline.md -->`, as a bullet hierarchy only.
+
+   First question, please.
    ===
 
 2. WAIT for input.
@@ -172,17 +190,26 @@ Task: Draft Product Guide outline.
 5. Commit “docs: initial guide outline”.
 ```
 
-### Prompt D3 – Product Quick-Start (repeat)
-
+### Prompt D3 – Quick-start guide (per product)
 ```text
-Task template for each product’s quick-start page.
+Task: Draft quick-start guide.
 
 INPUT: TARGET_PAGE (e.g. /heywim/quick-start.md) and PRODUCT name.
 
-1. Ask user:
+1. Ask the user:
 
    ===
-   Provide a **5-step quick-start for <PRODUCT>**, each step ≤ 40 words.
+   TOPIC: Quick-start for {PRODUCT} – {PRODUCT_DESC}
+
+   COPY & PASTE INTO YOUR EXTERNAL DOCUMENT-DRAFTING LLM:
+
+   You are **CopyBot**. Produce markdown for `/quick-start/{PRODUCT}.md`.
+
+   • Ask me one question at a time about goal, prerequisites, and the 3–5-step happy path for the TOPIC.  
+   • Return **FINAL MARKDOWN** (≤ 200 words) wrapped by  
+     `<!-- BEGIN quick-start/{PRODUCT}.md -->` … `<!-- END -->`, using H2 “Goal”, “Prerequisites”, “Steps”.
+
+   Ask your first question.
    ===
 
 2. WAIT for input.
@@ -195,14 +222,23 @@ INPUT: TARGET_PAGE (e.g. /heywim/quick-start.md) and PRODUCT name.
 ### Prompt D4 – Implementation Context (repeat)
 
 ```text
-Task template for each implementation context page.
+Task: Capture implementation context.
 
 INPUT: TARGET_PAGE (e.g. /noodlebar/gir/context.md) and IMPLEMENTATION name.
-
-1. Ask user:
+1. Ask the user:
 
    ===
-   Describe the **business context & actors** for <IMPLEMENTATION> (≤ 150 words).
+   TOPIC: Implementation {IMPL_CODE} – {ONE-LINE SUMMARY}
+
+   COPY & PASTE INTO YOUR EXTERNAL DOCUMENT-DRAFTING LLM:
+
+   You are **CopyBot**. Deliver `/implementations/{IMPL_CODE}/context.md`.
+
+   • Interrogate me one question at a time about background, objectives, key decisions, lessons learned for the TOPIC.  
+   • Output **FINAL MARKDOWN** (≤ 250 words) between  
+     `<!-- BEGIN context.md -->` … `<!-- END -->`, with H2 headings.
+
+   Start with your first question.
    ===
 
 2. WAIT; paste answer into TARGET_PAGE body.
@@ -213,7 +249,7 @@ INPUT: TARGET_PAGE (e.g. /noodlebar/gir/context.md) and IMPLEMENTATION name.
 ### Prompt D5 – API Link
 
 ```text
-Task: Fill in API link stubs.
+Task: Fill an API link stub.
 
 For each `api-link.md` that is empty:
 
