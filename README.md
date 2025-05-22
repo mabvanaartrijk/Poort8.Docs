@@ -9,8 +9,7 @@ This repository follows the GitHub Pages with Jekyll structure using the `/docs`
 ```
 .
 ├── docs/                     # Source directory for Jekyll
-│   ├── _config.yml          # Main Jekyll configuration
-│   ├── _config.dev.yml      # Development overrides
+│   ├── _config.yml          # Jekyll configuration
 │   ├── index.md             # Home page
 │   ├── guide.md             # Product guide
 │   ├── CNAME               # Custom domain configuration
@@ -52,10 +51,10 @@ To run the CI workflow for this repository, follow these steps:
 ## Running Locally Using VS Code Tasks
 
 The repository includes VS Code tasks for common operations:
-1. **Jekyll: Serve** - Start the development server with live reload
+1. **Jekyll: Serve (Production)** - Start the site server with live reload
 2. **Jekyll: Build** - Build the site once
 3. **Jekyll: Test** - Run HTML Proofer tests on the built site
-4. **Jekyll: Build & Test** - Run build and test in sequence
+4. **Jekyll: Clean** - Clean the Jekyll build
 
 To run these tasks:
 1. Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on macOS)
@@ -75,7 +74,4 @@ bundle exec jekyll serve --livereload --source docs
 
 # Test the site
 bundle exec htmlproofer ./_site --disable-external
-
-# Development mode with overrides
-bundle exec jekyll serve --livereload --source docs --config docs/_config.yml,docs/_config.dev.yml
 ```
