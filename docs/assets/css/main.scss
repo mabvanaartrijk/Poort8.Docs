@@ -1,4 +1,8 @@
---- # Only the main Sass file needs front matter (the dashes are enough) --- @import "minima";
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@import "minima";
 
 // Basic styling
 html,
@@ -46,6 +50,64 @@ body {
 .nav-subitem,
 .nav-subsubitem {
   padding: 5px 0;
+}
+
+// Active state styling
+.nav-item.active>a,
+.nav-subitem.active>a,
+.nav-subsubitem.active>a {
+  font-weight: 600;
+  color: #0366d6;
+}
+
+// Hover effects
+.nav-item a:hover,
+.nav-subitem a:hover,
+.nav-subsubitem a:hover {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+// Product section styling
+.product-section {
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.product-section:last-child {
+  border-bottom: none;
+}
+
+// Navigation indentation and hierarchy visualization
+.nav-sublist {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+// Override minima's site nav styling for our header
+.site-header {
+  border-bottom: 1px solid #e8e8e8;
+  min-height: auto;
+  padding: 15px 0;
+  margin-bottom: 20px;
+}
+
+// Responsive adjustments
+@media screen and (max-width: 800px) {
+  .page-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    flex: 0 0 100%;
+    padding-right: 0;
+    margin-right: 0;
+    border-right: none;
+    border-bottom: 1px solid #e8e8e8;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+  }
 }
 
 .nav-item.active>a,
