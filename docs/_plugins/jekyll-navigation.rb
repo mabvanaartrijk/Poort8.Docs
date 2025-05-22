@@ -9,8 +9,9 @@ module Jekyll
       @site = site
       @navigation = []
       @pages_by_parent = {}
+      @pages_by_grandparent = {}
 
-      # First pass: categorize pages by parent
+      # First pass: categorize pages by parent and grandparent
       @site.pages.each do |page|
         next if page.data['exclude_from_nav'] # Skip if excluded
 
@@ -18,8 +19,13 @@ module Jekyll
         next unless page.data['title']
 
         parent_title = page.data['parent']
+        grandparent_title = page.data['grand_parent']
 
-        if parent_title
+        if grandparent_title && parent_title
+          @pages_by_grandparent[grandparent_title] ||= {}
+          @pages_by_grandparent[grandparent_title][parent_title] ||= []
+          @pages_by_grandparent[grandparent_title][parent_title] << page
+        elsif parent_title
           @pages_by_parent[parent_title] ||= []
           @pages_by_parent[parent_title] << page
         elsif is_index_page(page) || page.data['nav_order']
@@ -73,7 +79,8 @@ module Jekyll
       item = {
         'title' => page.data['title'],
         'url' => page.url,
-        'nav_order' => page.data['nav_order'] || (is_index_page(page) ? 1 : 999)
+        'nav_order' => page.data['nav_order'] || (is_index_page(page) ? 1 : 999),
+        'grand_parent' => page.data['grand_parent']
       }
 
       # Add children flag if specified
