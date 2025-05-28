@@ -25,6 +25,7 @@ plugins:
   - jekyll-github-metadata
   - jekyll-redirect-from
   - jekyll-navigation
+  - jekyll-last-modified-at
 
 minima:
   sidebar:
