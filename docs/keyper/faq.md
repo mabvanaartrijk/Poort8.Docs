@@ -3,8 +3,6 @@ title: "FAQ"
 nav_order: 20
 parent: "Keyper"
 layout: default
----title: "FAQ"
-nav_order: 10
 ---
 
 ## Frequently Asked Questions
@@ -24,3 +22,4 @@ A: The API supports signed, auditable approvals and optional orchestration steps
 ### Q: Where can I find the Keyper API documentation?
 
 A: You can find the Keyper API documentation [here](https://keyper-preview.poort8.nl/scalar/).
+

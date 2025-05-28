@@ -1,7 +1,6 @@
 ---
 title: "Implementations"
 nav_order: 5
-parent: "Keyper"
 has_children: true
 layout: default
 ---

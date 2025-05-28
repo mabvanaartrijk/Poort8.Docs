@@ -1,8 +1,7 @@
 ---
-title: "GIR Context"
-nav_order: 40
+title: "GIR"
+nav_order: 3
 parent: "Implementations"
-grand_parent: "Keyper"
 layout: default
 ---
 

@@ -1,6 +1,8 @@
 ---
-title: "DVU Context"
+title: "Multiple Buildings"
 nav_order: 20
+parent: "DVU"
+grand_parent: "Implementations"
 layout: default
 ---
 
