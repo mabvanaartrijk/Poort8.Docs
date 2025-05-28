@@ -23,7 +23,7 @@ Enable a federated consumer app to request and obtain multi-party data access ap
 
    **Implementation-specific documentation:**
    - [DVU Data Services Integration](implementations/dvu/context.html) - For DVU service providers requesting energy data approval
-   - [GIR Implementation](implementations/gir/context.html) - Global Installation Registry
+  - [GIR Implementation](implementations/gir/index.html) - Global Installation Registry
    - [CDA Implementation](implementations/cda/context.html) - Centralized Data Access
    - [GDS Implementation](implementations/gds/context.html) - Global Data Space
 3. **Verify link status**

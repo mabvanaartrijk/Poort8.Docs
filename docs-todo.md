@@ -35,7 +35,7 @@ This file tracks the progress of content development for all Markdown files in t
 
 #### GIR
 
-- [ ] /docs/keyper/implementations/gir/context.md — GIR Context
+- [x] /docs/keyper/implementations/gir/index.md — GIR Context
 
 #### CDA
 
