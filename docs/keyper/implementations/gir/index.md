@@ -6,6 +6,22 @@ layout: default
 ---
 
 # GIR Implementation Context
+De Gebouw Installatie Registratie API (GIR) is ontworpen om gebouwbeheerders in staat te stellen installatiegegevens te registreren, toegangsrechten te beheren en beveiligde gegevensuitwisseling mogelijk te maken met geautoriseerde dataverbruikers, zoals bijvoorbeeld EDSN (Energie Data Services Nederland). De API ondersteunt autorisatiebeheer en een naadloze verwerking van installatiegegevens.
+
+## Belangrijkste functies van de GIR applicatie:
+DSGO Autorisatieregister: Geeft gebruikers de mogelijkheid om rechten in te stellen voor installatiebedrijven of andere registranten en voor dataverbruikers om gebouwinstallatiegegevens te bekijken en te beheren.
+Installatieregistratie en metadataverwerking: Ondersteunt installatiebedrijven bij het registreren en bijwerken van installatiedetails, waarmee dataverbruikers deze gegevens kunnen ophalen en analyseren.
+
+## Installatie registratie (Happy flow)
+1. Registratie installatie door de registrant (via eigen applicatie, bijvoorbeeld de Formulierenapp): Deze stap stelt installatiebedrijven in staat om in te loggen, registratieformulieren te openen, installatiegegevens in te dienen (zoals installatietype en locatie) en de succesvolle registratie te bevestigen. De app van de registrant registreert eerst installaties, die op 'pending' status komen te staan indien de juiste toestemmingen er nog niet zijn.
+2. Aanvragen goedkeuring door registrant (via eigen applicatie, bijvoorbeeld de Formulierenapp): De app van de registrant creëert een approval-link in Keyper Approve. Daarin worden alle benodigde dataspace transacties opgenomen (inschrijving organisatie, toestemmingen). Deze link wordt gebruikt om de benodigde goedkeuringen te verkrijgen van de installatie-eigenaar. Keyper is een aparte applicatie die volgens de DSGO standaarden toestemmingsaanvragen en andere transacties in DSGO dataspaces verwerkt, waarmee de integriteit en geldigheid van alle goedkeuringsverzoeken wordt gewaarborgd.
+3. Controle approval-link door Keyper Approve: Keyper Approve controleert de approval-link. Als alle transacties geldig kunnen worden verwerkt, wordt de approval-link 'Active'. Deze status stuurt Keyper Approve terug in het response op de call POST /api/approval-links. Als er transacties niet geldig zijn, geeft het status-veld in de response aan wat er met de transacties mis is. De approval-link kan dan niet worden gebruikt.
+4. Mailverzoek aan installatie-eigenaar door Keyper Approve: Voor een geldige 'Active' approval-link wordt een e-mail verstuurd naar de installatie-eigenaar met een link naar de Approval flow waarmee de eigenaar deze transacties kan controleren en bevestigen.
+5. Bevestiging na authenticatie via eHerkenning: Dit stelt gebruikers in staat om veilig in te loggen en hun identiteit als vertegenwoordigers van hun organisaties te verifiëren. Na goedkeuring worden de gegevens beschikbaar voor geautoriseerde dataverbruikers.
+6. Ophalen van installatie-metadata door dataverbruiker: Dataverbruikers kunnen gegevens waarvoor zij geautoriseerd zijn opvragen en ophalen. Deze stroom handhaaft toegangsrechten zoals deze door de gegevenseigenaar zijn beheerd.
+7. Ophalen relevante productdata: Met de opgehaalde installatie-metadata kan de datadienstgebruiker vervolgens naar diens specifieke informatiebehoefte bij 2BA de relevante productdata over de installaties (conform ETIM-standaard) ophalen, zie 2BA ETIMFeaturesValues (API).
+
+Bron: [API documentatie DICO standaard GIR Basisdata Message](https://ketenstandaard.semantic-treehouse.nl/docs/api/GIR/)
 
 ## Keyper Approve integration for the Gebouw Installatie Register: permissions to register and retrieve installations
 
