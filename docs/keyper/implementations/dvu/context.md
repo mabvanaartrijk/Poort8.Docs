@@ -1,5 +1,5 @@
 ---
-title: "DVU Context"
+title: "DVU - enkel gebouw toevoegen"
 nav_order: 20
 parent: "Implementations"
 grand_parent: "Keyper"

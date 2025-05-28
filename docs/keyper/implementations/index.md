@@ -11,8 +11,8 @@ layout: default
 This section contains documentation for various Keyper implementations:
 
 ## Datastelsel Verduurzaming Utiliteit (DVU)
-    - [DVU - add single building](/keyper/implementations/dvu/context.html)
-    - [DVU - add multiple buildings](/keyper/implementations/dvu/gebouwen-in-bulk.html)
+- [DVU - add single building](/keyper/implementations/dvu/context.html)
+- [DVU - add multiple buildings](/keyper/implementations/dvu/gebouwen-in-bulk.html)
 
 ## Gebouw Installatie Registratie
 - [GIR - permission to register installations](/keyper/implementations/gir/index.html)

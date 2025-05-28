@@ -1,6 +1,8 @@
 ---
-title: "DVU Context"
+title: "DVU - meerdere gebouwen toevoegen"
 nav_order: 20
+parent: "Implementations"
+grand_parent: "Keyper"
 layout: default
 ---
 
