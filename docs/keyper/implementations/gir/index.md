@@ -8,9 +8,90 @@ layout: default
 
 # GIR Implementation Context
 
-## Keyper Approve integration for the Gebouw Installatie Register
+## Keyper Approve integration for the Gebouw Installatie Register: permissions to register and retrieve installations
 
 The GIR (Gebouw Installatie Register) requires explicit consent from the building owner before a registrant can submit installation data. The sequence below illustrates the approval process.
+
+### Doel
+
+Gebruikers van een applicatie moeten toestemming vragen aan de energiecontractant om energiedata op te halen. Dit gebeurt via een formulier op de website van de applicatie en een achterliggende API-call naar Keyper Approve.
+
+---
+
+### Stap 1: Registration of an installation
+
+#work-in-progress
+
+### Stap 2: Aanroepen van de Keyper API
+
+[https://keyper-preview.poort8.nl/scalar/#tag/approval-links/POST/api/approval-links](https://keyper-preview.poort8.nl/scalar/#tag/approval-links/POST/api/approval-links)
+
+Bij formulierverzending stuur je een POST-verzoek naar:
+
+```
+POST https://keyper-preview.poort8.nl/api/approval-links
+Content-Type: application/json
+```
+
+#### JSON-body voorbeeld voor DVU op basis van informatie registrant
+
+Create an approval link via the Keyper API using the following template. Replace the placeholders with values from your own application.
+
+```json
+{
+  "addPolicyTransactions": [
+    {
+      "useCase": "GIR",
+      "issuedAt": 1739881378,
+      "notBefore": 1739881378,
+      "expiration": 1839881378,
+      "issuerId": "{{installationOwnerChamberOfCommerceNumber}}",
+      "subjectId": "{{registrarChamberOfCommerceNumber}}",
+      "serviceProvider": "NL.KVK.27248698",
+      "action": "write",
+      "resourceId": "{{vboID}}",
+      "type": "vboID",
+      "attribute": "{{installationID}}",
+      "license": "0005"
+    },
+    {
+      "useCase": "GIR",
+      "issuedAt": 1739881378,
+      "notBefore": 1739881378,
+      "expiration": 1839881378,
+      "issuerId": "{{installationOwnerChamberOfCommerceNumber}}",
+      "subjectId": "NL.KVK.39098825",
+      "serviceProvider": "NL.KVK.27248698",
+      "action": "read",
+      "resourceId": "{{vboID}}",
+      "type": "vboID",
+      "attribute": "*",
+      "license": "0005",
+      "rules": "Classificaties(NLSfB-55.21,NLSfB-56.21,NLSfB-61.15,NLSfB-62.32,NLSfB-61.18)"
+    }
+  ],
+  "requester": {
+    "email": "{{requesterEmail}}",
+    "organization": "{{registrarChamberOfCommerceNumber}}",
+    "organizationId": "{{registrarChamberOfCommerceNumber}}"
+  },
+  "approver": {
+    "email": "{{approverEmail}}",
+    "organization": "{{installationOwnerChamberOfCommerceNumber}}",
+    "organizationId": "{{installationOwnerChamberOfCommerceNumber}}"
+  },
+  "dataspace": {
+    "name": "DSGO",
+    "Use case": "GIR"
+  },
+  "description": "GIR installation registration approval",
+  "reference": "<your reference>",
+  "expiresInSeconds": 604800,
+  "redirectUrl": "https://www.technieknederland.nl"
+}
+```
+
+## Sequence diagram Gebouw Installatie Registratie
 
 ```plantuml
 @startuml
@@ -83,60 +164,3 @@ note over GIR: installatie beschikbaar voor datadeelprocessen
 @enduml
 ```
 
-### Approval link request
-
-Create an approval link via the Keyper API using the following template. Replace the placeholders with values from your own application.
-
-```json
-{
-  "addPolicyTransactions": [
-    {
-      "useCase": "GIR",
-      "issuedAt": 1739881378,
-      "notBefore": 1739881378,
-      "expiration": 1839881378,
-      "issuerId": "{{installationOwnerChamberOfCommerceNumber}}",
-      "subjectId": "{{registrarChamberOfCommerceNumber}}",
-      "serviceProvider": "NL.KVK.27248698",
-      "action": "write",
-      "resourceId": "{{vboID}}",
-      "type": "vboID",
-      "attribute": "{{installationID}}",
-      "license": "0005"
-    },
-    {
-      "useCase": "GIR",
-      "issuedAt": 1739881378,
-      "notBefore": 1739881378,
-      "expiration": 1839881378,
-      "issuerId": "{{installationOwnerChamberOfCommerceNumber}}",
-      "subjectId": "NL.KVK.39098825",
-      "serviceProvider": "NL.KVK.27248698",
-      "action": "read",
-      "resourceId": "{{vboID}}",
-      "type": "vboID",
-      "attribute": "*",
-      "license": "0005",
-      "rules": "Classificaties(NLSfB-55.21,NLSfB-56.21,NLSfB-61.15,NLSfB-62.32,NLSfB-61.18)"
-    }
-  ],
-  "requester": {
-    "email": "{{requesterEmail}}",
-    "organization": "{{registrarChamberOfCommerceNumber}}",
-    "organizationId": "{{registrarChamberOfCommerceNumber}}"
-  },
-  "approver": {
-    "email": "{{approverEmail}}",
-    "organization": "{{installationOwnerChamberOfCommerceNumber}}",
-    "organizationId": "{{installationOwnerChamberOfCommerceNumber}}"
-  },
-  "dataspace": {
-    "name": "DSGO",
-    "Use case": "GIR"
-  },
-  "description": "GIR installation registration approval",
-  "reference": "<your reference>",
-  "expiresInSeconds": 604800,
-  "redirectUrl": "https://www.technieknederland.nl"
-}
-```

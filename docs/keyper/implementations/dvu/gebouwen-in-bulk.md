@@ -1,41 +1,22 @@
 ---
 title: "DVU Context"
 nav_order: 20
-parent: "Implementations"
-grand_parent: "Keyper"
 layout: default
 ---
 
-# DVU Implementation: enkel gebouw toevoegen vanuit externe datadienst
+# DVU Implementatie: meerdere gebouwen toevoegen vanuit externe datadienst
 
-## Implementatie-instructie Keyper Approve voor DVU datadiensten: Toestemming voor Energiedata van een enkel gebouw via DVU
+## Implementatie-instructie Keyper Approve voor DVU diensten: Toestemming voor Energiedata van meerdere gebouwen via DVU
 
 ### Doel
 
-Gebruikers van een applicatie moeten toestemming vragen aan de energiecontractant om energiedata op te halen. Dit gebeurt via een formulier op de website van de applicatie en een achterliggende API-call naar Keyper Approve.
+Gebruikers van een applicatie moeten toestemming vragen aan de energiecontractant om energiedata op te halen.
 
 ---
 
-### Stap 1: Formulier op de website
+### Stap 1: 
 
-#### Velden aanvrager (invullend persoon)
-
-- E-mailadres
-- Organisatie
-- Organisatie-id (EORI)
-- Adres aan te vragen gebouw
-  - Straatnaam
-  - Huisnummer
-  - Postcode
-  - Plaats
-
-#### Velden energiecontractant (approver via Keyper Approve)
-
-- E-mailadres
-- Organisatie&#x20;
-- Organisatie-id (EORI)
-
-Client-side validatie verplicht voor e-mail, EORI-nummer en verplichte velden. Helaas ondersteunt DVU op dit moment nog geen KVK nummers.
+Voorbereiding Keyper Approve link voor gebouwen toevoegen in bulk. #work-in-progress
 
 ---
 
@@ -104,3 +85,85 @@ Content-Type: application/json
 - Het **orchestration** object is nog in ontwikkeling. Hier worden nog (breaking) changes verwacht.
 
 - Normaal gesproken wordt bij het aanmaken van een **Keyper Approve link** direct een `url` teruggestuurd waarmee het goedkeuringsproces kan worden begonnen. In de DVU Approve-flow moet de `approver` eerst zelf aanvullende informatie toevoegen via DVU. De `approver` wordt automatisch per mail genotificeerd en naar dit proces geleid. Daarom kan de Keyper Approve link die is aangemaakt niet direct gebruikt worden. Toon deze dus niet aan de gebruiker want deze kan hem niet succesvol afronden.
+
+## Sequence diagram toegang aanvragen tot gebouwen in bulk
+
+De onderstaande sequence toont het DVU goedkeuringsproces voor meerdere gebouwen tegelijk.
+
+```plantuml
+entryspacing 0.7
+frame #ddf2ff  DVU
+
+fontawesome5solid f007 "Gebouwbeheerder\nen energiecontractant" as GE #512a19
+fontawesome5solid f5b0 "dataservice-gebruiker" as DG #005a9c
+fontawesome5solid f13d "Keyper Approve" as KA #3bba9c
+fontawesome5solid f0ac "DVU Metadata-app" as MetadataApp #ffd580
+fontawesome5solid f6a1 "DVU Satelliet" as DVUSat #ffa98a
+fontawesome5solid f3ed "Autorisatieregister" as AR #5182d8
+fontawesome5solid f2c1 "eHerkenning" as Eherkenning #592874
+fontawesome5solid f1c0 "dataservice-aanbieder" as DA #888888
+fontawesome5solid f0d1 RNB #dddddd
+
+== Gebouwen toevoegen via DG == #ddf2ff
+activate GE
+GE->DG: start sessie
+activate DG
+GE->DG: invoeren gebouwen (adres/vboId)
+DG->DG: verzamelen gebouwdata
+DG->KA: aanmaken transactielink
+activate KA
+KA->KA: valideren input
+KA->DG: status: Active + redirect URL
+deactivate KA
+DG->GE: redirect naar Keyper Approve
+deactivate DG
+
+
+== Bulk-gebouwgegevens aanvullen (tijdelijk totdat CAR aansluiting in gebruik is)== #ddf2ff
+
+GE->KA: openen redirect URL
+activate KA
+KA->GE: redirect naar MetadataApp (gebouw toevoegen in bulk)
+deactivate KA
+GE->MetadataApp: invullen aanvullende gegevens
+activate MetadataApp
+GE->MetadataApp: doorlopen flow
+MetadataApp->GE: terug naar Keyper Approve
+deactivate MetadataApp
+
+== Transacties bevestigen == #ddf2ff
+GE->KA: controleer transacties
+activate KA
+note over KA: (optioneel) registratie \noverheidsorganisatie\nals DVU-deelnemer
+note over KA: toestemming ophalen\nenergiedata voor DG:\nper gebouw geregistreerd\n(later: bulktoestemming)
+
+KA->GE: overzicht transacties
+GE->Eherkenning: inloggen eHerkenning niveau 3
+activate Eherkenning
+Eherkenning->KA: identity token
+deactivate Eherkenning
+KA->DVUSat: registreer inschrijving
+activate DVUSat
+DVUSat-->KA: bevestiging
+deactivate DVUSat
+
+KA->AR: registreer metadata & toestemmingen
+activate AR
+AR-->KA: bevestiging
+KA-->RNB: afgeven/hergebruiken toestemmingen onder GUE
+deactivate AR
+KA->GE: redirect naar DG
+deactivate GE
+KA->DG: notificatie: autorisaties verwerkt
+deactivate KA
+
+
+== Data ophalen via DVU koppelingen == #ddf2ff
+activate DG
+DG->AR: ophalen vboIds + EANs (digikoppeling)
+activate AR
+AR-->DG: identifiers
+deactivate AR
+DG->DA: ophalen energiedata
+deactivate DG
+```
