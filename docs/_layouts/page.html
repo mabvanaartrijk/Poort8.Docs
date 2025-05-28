@@ -9,6 +9,7 @@ layout: default
 
   <div class="post-content">
     {{ content }}
+    <p class="last-updated">Last update: {{ page.last_modified_at | date: "%Y-%m-%d" }}</p>
   </div>
 
 </article>

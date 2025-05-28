@@ -7,6 +7,7 @@ gem 'html-proofer'
 gem 'jekyll-github-metadata'
 gem 'jekyll-redirect-from'
 gem 'jekyll-navigation'
+gem 'jekyll-last-modified-at'
 
 group :test do
   gem "rspec", "~> 3.12"
