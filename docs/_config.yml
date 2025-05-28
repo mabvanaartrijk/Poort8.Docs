@@ -36,4 +36,6 @@ sass:
 # Pages to include in header navigation
 header_pages:
   - index.md
-  - guide.md
+  - heywim/index.md
+  - keyper/index.md
+  - noodlebar/index.md
