@@ -1,8 +1,8 @@
 ---
 title: "DVU - enkel gebouw toevoegen"
-nav_order: 20
-parent: "Implementations"
-grand_parent: "Keyper"
+nav_order: 10
+parent: "DVU"
+grand_parent: "Implementations"
 layout: default
 ---
 

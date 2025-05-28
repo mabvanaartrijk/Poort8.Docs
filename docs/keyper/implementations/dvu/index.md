@@ -1,8 +1,8 @@
 ---
-title: "DVU Context"
-nav_order: 20
+title: "DVU"
+nav_order: 2
 parent: "Implementations"
-grand_parent: "Keyper"
+has_children: true
 layout: default
 ---
 

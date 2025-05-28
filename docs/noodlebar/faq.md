@@ -1,10 +1,9 @@
 ---
 title: "FAQ"
 nav_order: 20
-parent: "Noodlebar"
+parent: "NoodleBar"
 layout: default
----title: "FAQ"
-nav_order: 10
 ---
 
 ## Work in progress
+

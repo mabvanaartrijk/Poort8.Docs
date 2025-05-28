@@ -2,9 +2,8 @@
 title: "FAQ"
 nav_order: 20
 parent: "HeyWim"
+grand_parent: "Implementations"
 layout: default
----title: "FAQ"
-nav_order: 10
 ---
 
 ## Frequently Asked Questions
@@ -24,3 +23,4 @@ A: The API supports validation, event retrieval, and milestone extraction based 
 ### Q: Where can I find the HeyWim API documentation?
 
 A: You can find the HeyWim API documentation [here](https://poort8.github.io/Poort8.HeyWim.Swagger/).
+
