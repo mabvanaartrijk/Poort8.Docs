@@ -6,6 +6,10 @@ has_children: true
 layout: default
 ---
 
+## Subpages
+- [Add single building](context.html)
+- [Add multiple buildings](gebouwen-in-bulk.html)
+
 # DVU Implementation Context
 
 #work-in-progress
