@@ -108,6 +108,8 @@ Create an approval link via the Keyper API using the following template. Replace
 
 ## Sequence diagram Gebouw Installatie Registratie
 
+![GIR Approval Flow](./gir-approval-flow.png)
+
 ```plantuml
 @startuml
 !theme plain
