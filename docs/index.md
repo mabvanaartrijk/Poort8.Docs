@@ -28,7 +28,7 @@ NoodleBar gives organizations complete control over how their data is shared.
 You define who can access your data and under what conditions — and you can change both at any moment. Data is shared directly from the source, avoiding centralized data silos. NoodleBar includes composable modules like:
 
 - Role-based access control (RBAC) for M2M access
-- Authorizarion register
+- Authorization register
 - Organization register
 - Token server
 - OpenAPI-powered service catalog

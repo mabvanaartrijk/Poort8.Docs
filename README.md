@@ -31,6 +31,7 @@ This repository follows the GitHub Pages with Jekyll structure using the `/docs`
 ├── Gemfile               # Ruby dependencies
 └── README.md            # This file
 
+```
 ## Setting up the Devcontainer
 
 To set up the devcontainer for building and testing this repository in GitHub Codespaces, follow these steps:
