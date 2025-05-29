@@ -8,6 +8,11 @@ $breakpoint-lg: 1040px; // Large breakpoint for content width, chosen based on d
 $content-width: $breakpoint-lg;
 @import "minima";
 
+.page-content > .wrapper {
+  max-width: none;
+  width: 100%;
+}
+
 // Basic styling
 html,
 body {
