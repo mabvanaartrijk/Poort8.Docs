@@ -136,18 +136,3 @@ body {
   padding: 15px 0;
 }
 
-@media screen and (max-width: 800px) {
-  .page-container {
-    flex-direction: column;
-  }
-
-  .sidebar {
-    flex: 0 0 100%;
-    padding-right: 0;
-    margin-right: 0;
-    border-right: none;
-    border-bottom: 1px solid #e8e8e8;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-  }
-}
