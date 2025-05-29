@@ -62,7 +62,7 @@ Content-Type: application/json
   },
   "approver": {
     "email": "<EMAIL_ENERGIECONTRACTANT>",
-    "organization": "<ORANISATIE_ENERGIECONTRACTANT>",
+    "organization": "<ORGANISATIE_ENERGIECONTRACTANT>",
     "organizationId": "<EORI_ENERGIECONTRACTANT>"
   },
   "dataspace": {

@@ -2,7 +2,6 @@
 title: "FAQ"
 nav_order: 20
 parent: "HeyWim"
-grand_parent: "Implementations"
 layout: default
 ---
 

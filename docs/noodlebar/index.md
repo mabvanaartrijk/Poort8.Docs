@@ -21,4 +21,4 @@ In very many cases, a typical user process in a dataspace use case does not star
 
 In  dataspace standards only step 3 is standardized. E.g. for DSGO and iSHARE, the endpoint delegation is used for this. NoodleBar provides various enforce endpoints out of the box, see Authorization.
 
-The process for Step 1, requesting access, and Step 2, registering conditions, is often a domain of even usecase specific process, that needs to tie in tightly to existing access management or collaboration processes. In NoodleBar, dataspace managers have the discretion to give access to trusted control plane apps for facilitating these processes, such as [Keyper Approve].
+The process for Step 1, requesting access, and Step 2, registering conditions, is often a domain of even usecase specific process, that needs to tie in tightly to existing access management or collaboration processes. In NoodleBar, dataspace managers have the discretion to give access to trusted control plane apps for facilitating these processes, such as [Keyper Approve](../keyper/index.html).
