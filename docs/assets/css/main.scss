@@ -2,7 +2,7 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 
-$content-width: 1000px;
+$content-width: 1040px;
 
 @import "minima";
 
@@ -18,7 +18,7 @@ body {
 // Custom styles for navigation
 .page-container {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   margin-top: 30px;
 }
 
