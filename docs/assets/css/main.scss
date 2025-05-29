@@ -2,8 +2,10 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 
-$content-width: 1040px;
+// Define breakpoints for responsive design
+$breakpoint-lg: 1040px; // Large breakpoint for content width, chosen based on design requirements
 
+$content-width: $breakpoint-lg;
 @import "minima";
 
 // Basic styling
