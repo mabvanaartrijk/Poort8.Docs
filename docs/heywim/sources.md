@@ -1,11 +1,3 @@
----
-title: "Data Sources"
-parent: "HeyWim"
-nav_order: 15
-layout: default
----
-
-
 # HeyWim — Data Sources
 
 *This catalogue is under construction.*

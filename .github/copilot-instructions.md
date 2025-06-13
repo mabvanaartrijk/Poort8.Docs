@@ -1,1 +1,2 @@
 - This repo uses docsify, a static site generator that converts Markdown files into a website
+- Make sure _sidebar.md is always up to date with all md files in the docs folder

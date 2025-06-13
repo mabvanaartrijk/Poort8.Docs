@@ -1,9 +1,4 @@
----
-title: "Quick Start"
-nav_order: 10
-parent: "Noodlebar"
-layout: default
----
+
 
 Get up and running with NoodleBar in five simple steps:
 

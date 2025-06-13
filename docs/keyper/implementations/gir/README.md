@@ -1,9 +1,4 @@
----
-title: "GIR"
-nav_order: 3
-parent: "Implementations"
-layout: default
----
+
 
 # GIR Implementation Context
 De Gebouw Installatie Registratie API (GIR) is ontworpen om gebouwbeheerders in staat te stellen installatiegegevens te registreren, toegangsrechten te beheren en beveiligde gegevensuitwisseling mogelijk te maken met geautoriseerde dataverbruikers, zoals bijvoorbeeld EDSN (Energie Data Services Nederland). De API ondersteunt autorisatiebeheer en een naadloze verwerking van installatiegegevens.

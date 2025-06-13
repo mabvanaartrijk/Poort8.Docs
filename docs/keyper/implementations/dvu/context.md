@@ -1,10 +1,4 @@
----
-title: "DVU - enkel gebouw toevoegen"
-nav_order: 10
-parent: "DVU"
-grand_parent: "Implementations"
-layout: default
----
+
 
 # DVU Implementation: enkel gebouw toevoegen vanuit externe datadienst
 

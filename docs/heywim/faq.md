@@ -1,9 +1,4 @@
----
-title: "FAQ"
-nav_order: 20
-parent: "HeyWim"
-layout: default
----
+
 
 ## Frequently Asked Questions
 

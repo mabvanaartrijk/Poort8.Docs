@@ -1,10 +1,3 @@
----
-title: "Docs"
-nav_order: 1
-has_children: true
-layout: default
----
-
 # Poort8 Documentation
 
 ## Why Poort8?

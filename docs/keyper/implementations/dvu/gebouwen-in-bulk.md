@@ -1,10 +1,4 @@
----
-title: "DVU - meerdere gebouwen toevoegen"
-nav_order: 20
-parent: "DVU"
-grand_parent: "Implementations"
-layout: default
----
+
 
 # DVU Implementatie: meerdere gebouwen toevoegen vanuit externe datadienst
 

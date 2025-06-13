@@ -1,10 +1,4 @@
----
-title: "GDS Context"
-nav_order: 30
-parent: "Implementations"
-grand_parent: "Keyper"
-layout: default
----
+
 
 # GDS Implementation Context
 

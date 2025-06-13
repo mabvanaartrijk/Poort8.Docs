@@ -1,8 +1,3 @@
----
-title: "Product Guide"
-nav_order: 2
-layout: default
----
 
 # Poort8 Dataspace Product Guide
 

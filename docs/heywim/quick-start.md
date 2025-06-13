@@ -1,9 +1,4 @@
----
-title: "Quick Start"
-nav_order: 10
-parent: "HeyWim"
-layout: default
----
+
 
 Follow these steps to start experimenting with HeyWim:
 

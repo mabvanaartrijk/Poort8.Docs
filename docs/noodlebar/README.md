@@ -1,9 +1,4 @@
----
-title: "NoodleBar"
-nav_order: 4
-has_children: true
-layout: default
----
+
 
 # What is NoodleBar?
 Dataspaces use standardized components to enable controlled and secure management of access to data (services). NoodleBar is Poort8's modularized solution for dataspace initiators and/or dataspace managers to set up a dataspace. The use of IAA principles and data standards ensures that functions can be federated e.g. according to iSHARE.
