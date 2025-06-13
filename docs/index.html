@@ -11,7 +11,11 @@
 </head>
 <body>
   <div id="app"></div>
+  <script src="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
   <script>
+    var num = 0;
+    mermaid.initialize({ startOnLoad: false });
+
     window.$docsify = {
       name: 'Poort8 Docs',
       repo: '',
@@ -22,22 +26,22 @@
         renderer: {
           code: function(code, lang) {
             if (lang === "mermaid") {
-              return (
-                '<div class="mermaid">' + mermaid.render('mermaid-svg-' + num++, code) + "</div>"
-              );
+              return '<div class="mermaid">' + code + '</div>';
             }
             return this.origin.code.apply(this, arguments);
           }
         }
-      }
+      },
+      plugins: [
+        function(hook) {
+          hook.doneEach(function() {
+            mermaid.init(undefined, '.mermaid');
+          });
+        }
+      ]
     }
   </script>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
-  <script src="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-  <script>
-    var num = 0;
-    mermaid.initialize({ startOnLoad: false });
-  </script>
 </body>
 </html>
