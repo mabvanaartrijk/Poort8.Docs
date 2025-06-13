@@ -26,7 +26,9 @@ A typical Keyper approval flow supports user of a dataspace service that needs a
 
 ### Orchestration and Flow Control
 
-Keyper includes orchestration options that allow for customized control over the flow of the approval and transaction execution. These orchestration steps are optional and can be configured per approval link. Together, they support flexible workflows that span multiple users, systems, and approval stages.#### Available
+Keyper includes orchestration options that allow for customized control over the flow of the approval and transaction execution. These orchestration steps are optional and can be configured per approval link. Together, they support flexible workflows that span multiple users, systems, and approval stages.
+
+#### Available
 
 - **Notification emails**: configurable notifications are sent to the requester and approver at key lifecycle stages (e.g., request created, approval granted, failure reported).
 - **Redirect chaining**: redirect the approver to another app or URL after the approval, allowing chained approval steps or post-approval actions.

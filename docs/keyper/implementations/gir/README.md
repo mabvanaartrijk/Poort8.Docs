@@ -4,8 +4,9 @@
 De Gebouw Installatie Registratie API (GIR) is ontworpen om gebouwbeheerders in staat te stellen installatiegegevens te registreren, toegangsrechten te beheren en beveiligde gegevensuitwisseling mogelijk te maken met geautoriseerde dataverbruikers, zoals bijvoorbeeld EDSN (Energie Data Services Nederland). De API ondersteunt autorisatiebeheer en een naadloze verwerking van installatiegegevens.
 
 ## Belangrijkste functies van de GIR applicatie:
-DSGO Autorisatieregister: Geeft gebruikers de mogelijkheid om rechten in te stellen voor installatiebedrijven of andere registranten en voor dataverbruikers om gebouwinstallatiegegevens te bekijken en te beheren.
-Installatieregistratie en metadataverwerking: Ondersteunt installatiebedrijven bij het registreren en bijwerken van installatiedetails, waarmee dataverbruikers deze gegevens kunnen ophalen en analyseren.
+
+- **DSGO Autorisatieregister**: Geeft gebruikers de mogelijkheid om rechten in te stellen voor installatiebedrijven of andere registranten en voor dataverbruikers om gebouwinstallatiegegevens te bekijken en te beheren.
+- **Installatieregistratie en metadataverwerking**: Ondersteunt installatiebedrijven bij het registreren en bijwerken van installatiedetails, waarmee dataverbruikers deze gegevens kunnen ophalen en analyseren.
 
 ## Installatie registratie (Happy flow)
 1. Registratie installatie door de registrant (via eigen applicatie, bijvoorbeeld de Formulierenapp): Deze stap stelt installatiebedrijven in staat om in te loggen, registratieformulieren te openen, installatiegegevens in te dienen (zoals installatietype en locatie) en de succesvolle registratie te bevestigen. De app van de registrant registreert eerst installaties, die op 'pending' status komen te staan indien de juiste toestemmingen er nog niet zijn.
@@ -120,74 +121,55 @@ Create an approval link via the Keyper API using the following template. Replace
 
 ![GIR Approval Flow](./gir-approval-flow.png)
 
-```plantuml
-@startuml
-!theme plain
-entryspacing 0.7
+```mermaid
+sequenceDiagram
+    participant REG as Registrant (installateur)
+    participant FormApp as Formulieren-app
+    participant GIR as Gebouw Installatie Register
+    participant KA as Keyper Approve
+    participant GB as Gebouwbeheerder
+    participant Eherkenning as eHerkenning
+    participant AR as GIR Autorisatieregister
+    participant DSGO as DSGO participantenregister
 
-frame #f0f8ff GIR
+    Note over REG, FormApp: Installatie aanmaken en indienen
+    REG->>FormApp: login met CRT
+    REG->>FormApp: installatie + componenten aanmaken
+    FormApp->>GIR: installatie indienen
+    
+    Note over GIR: Controle op aanwezigheid toestemming<br/>(bijv. policy van GB aan REG)
+    
+    alt Geen toestemming gevonden
+        GIR->>GIR: registratie status = Pending
+        GIR->>FormApp: bevestiging
+    else Toestemming bestaat al
+        GIR->>GIR: registratie status = Active
+        GIR->>FormApp: bevestiging
+        FormApp->>KA: goedkeuringsverzoek aan Keyper Approve
+        KA->>GB: e-mail met goedkeuringslink
+    end
+    
+    FormApp->>REG: bevestiging
 
-fontawesome5solid f007 "Registrant (installateur)" as REG #512a19
-fontawesome5solid f0ae "Formulieren-app" as FormApp #517dbf
-fontawesome5solid f084 "Gebouw Installatie Register" as GIR #fbce00
-fontawesome5solid f13d "Keyper Approve" as KA #3bba9c
-fontawesome5solid f007 "Gebouwbeheerder" as GB #3933ff
-fontawesome5solid f2c1 "eHerkenning" as Eherkenning #592874
-fontawesome5solid f3ed "GIR Autorisatieregister" as AR #5182d8
-fontawesome5solid f1c0 "DSGO participantenregister" as DSGO PR
+    Note over GB, KA: Gebouweigenaar keurt goed via Keyper Approve
+    GB->>KA: controleer transacties
+    
+    Note over KA: (eenmalige) registratie<br/>gebouwbeheerder<br/>als DSGO-deelnemer<br/>(niet in scope)
+    Note over KA: toestemmingen controleren voor:<br/>- machtiging registrant om<br/>installaties te registreren<br/>- EDSN om subset van installaties<br/>in te zien
 
-== Installatie aanmaken en indienen == #f0f8ff
-activate REG
-REG->FormApp: login met CRT
-activate FormApp
-REG->FormApp: installatie + componenten aanmaken
-FormApp->GIR: installatie indienen
-activate GIR
-note over GIR: Controle op aanwezigheid toestemming\n(bijv. policy van GB aan REG)
-alt Geen toestemming gevonden
-GIR->GIR: registratie status = Pending
-GIR->FormApp: bevestiging
+    KA->>GB: overzicht transacties
+    GB->>Eherkenning: inloggen eHerkenning niveau 3
+    
+    Note over Eherkenning: tijdens testfase<br/>alternatieve authenticatie<br/>met email-link
+    
+    Eherkenning->>KA: identity token
+    KA->>DSGO: registreer inschrijving
+    DSGO-->>KA: bevestiging
+    KA->>AR: registreer metadata & toestemmingen
+    AR-->>KA: bevestiging
+    KA->>GB: redirect naar ...?
 
-else Toestemming bestaat al
-GIR->GIR: registratie status = Active
-GIR->FormApp: bevestiging
-deactivate GIR
-FormApp->KA: goedkeuringsverzoek aan Keyper Approve
-KA->GB: e-mail met goedkeuringslink
-activate GB
-end
-FormApp->REG: bevestiging
-deactivate FormApp
-deactivate REG
-
-== Gebouweigenaar keurt goed via Keyper Approve == #f0f8ff
-GB->KA: controleer transacties
-activate KA
-note over KA: (eenmalige) registratie \ngebouwbeheerder\nals DSGO-deelnemer\n(niet in scope)
-note over KA: toestemmingen controleren voor:\n - machtiging registrant om\ninstallaties te registreren\n - EDSN om subset van installaties\nin te zien
-
-KA->GB: overzicht transacties
-GB->Eherkenning: inloggen eHerkenning niveau 3
-activate Eherkenning
-note over Eherkenning: tijdens testfase\nalternatieve authenticatie\nmet email-link
-Eherkenning->KA: identity token
-deactivate Eherkenning
-KA->DSGO PR: registreer inschrijving
-activate DSGO PR
-DSGO PR-->KA: bevestiging
-deactivate DSGO PR
-
-KA->AR: registreer metadata & toestemmingen
-activate AR
-AR-->KA: bevestiging
-
-deactivate AR
-KA->GB: redirect naar ...?
-deactivate GB
-deactivate KA
-
-== Installatie geregistreerd == #f0f8ff
-note over GIR: installatie beschikbaar voor datadeelprocessen
-@enduml
+    Note over GIR: Installatie geregistreerd
+    Note over GIR: installatie beschikbaar voor datadeelprocessen
 ```
 
