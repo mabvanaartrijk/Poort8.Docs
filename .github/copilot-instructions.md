@@ -1,0 +1,1 @@
+- This repo uses docsify, a static site generator that converts Markdown files into a website
