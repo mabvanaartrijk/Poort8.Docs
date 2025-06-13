@@ -2,11 +2,11 @@
 
 # DVU Implementation Context
 
-## Subpages
-- [Add single building](context.md)
-- [Add multiple buildings](gebouwen-in-bulk.md)
+## Quick Links
+- [🏠 Add single building](context.md)
+- [🏘️ Add multiple buildings](gebouwen-in-bulk.md)
 
-*Work in progress*
+> **Status:** Work in progress
 
 ## Sequence diagram toegang aanvragen tot gebouwen in bulk
 

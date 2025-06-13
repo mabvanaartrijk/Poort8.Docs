@@ -1,4 +1,4 @@
-# HeyWim — Data Sources
+# HeyWim Data Sources
 
 *This catalogue is under construction.*
  
@@ -8,4 +8,4 @@ Would you like to connect a specific data provider? That’s possible — we off
 
 Would you like to know exactly which sources we currently support, or do you have a specific data provider in mind? Please contact our team at hello@poort8.nl, and we’ll be happy to help.
 
-*Last updated: 6 June 2025*
+*Last updated: June 6, 2025*
