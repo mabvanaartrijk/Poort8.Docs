@@ -1,5 +1,7 @@
 
 
+# NoodleBar Quick Start
+
 Get up and running with NoodleBar in five simple steps:
 
 1. **Set up the base components** – Install the Authorization Registry, Organization Registry and Token Server using the provided Helm charts.

@@ -1,5 +1,7 @@
 
 
+# HeyWim FAQ
+
 ## Frequently Asked Questions
 
 ### Q: What is HeyWim?

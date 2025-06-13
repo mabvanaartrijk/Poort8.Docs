@@ -1,5 +1,7 @@
 
 
+# HeyWim Quick Start
+
 Follow these steps to start experimenting with HeyWim:
 
 1. **Register for access** – Contact Poort8 to obtain credentials for the sandbox environment.

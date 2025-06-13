@@ -1,5 +1,7 @@
 
 
+# NoodleBar FAQ
+
 ## Frequently Asked Questions
 
 ### Q: What is NoodleBar?
